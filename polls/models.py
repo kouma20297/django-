@@ -13,4 +13,13 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
     
+
+class post(models.Model):
+    title = models.CharField(max_length=250)
+    slug = models.CharField(max_length=250)
+    intro = models.TextField()
+    body = models.TextField()    
+    post_date = models.DateTimeField(auto_now_add=True)
     
+    # models.pyにデータを記述しただけだからデータベースを連結させるコマンドを打つ
+    # python manage.py makemigrationsと打つ
